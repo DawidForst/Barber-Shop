@@ -1,0 +1,113 @@
+@use './../utils' as *;
+
+.pricelist__section{
+    background: url(./../images/pricelist-bg.png), getColor("background-dark-color");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.pricelist__container{
+    flex-direction: column;
+}
+
+.pricelist__wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 44px;
+    background: $pricelist-backgroud;
+    row-gap: 20px;
+}
+
+@media screen and (min-width: 1200px) {
+    .pricelist__wrapper{
+        flex-direction: row;
+        background: transparent;
+        background: $pricelist-backgroud;
+    }
+}
+
+.pricelist__table--up{
+    padding: 30px 30px 0px 30px; 
+    width: 100%; 
+}
+
+@media screen and(min-width:1200px) {
+    .pricelist__table--up{
+        padding: 30px 30px 30px 30px;
+        background: $pricelist-backgroud;
+    }
+}
+
+.pricelist__table--down{
+    padding: 0px 30px 30px 30px;
+    width: 100%;  
+}
+
+@media screen and(min-width:1200px) {
+    .pricelist__table--down{
+        padding: 30px 30px 30px 30px;
+        background: $pricelist-backgroud-secondary;
+    }
+}
+
+
+.pricelist__decorative-span {
+    color: getColor("decoration-span-dark-color");
+    @include decorative-span;
+}
+
+.pricelist__title{
+    @include title;
+    color: getColor("light-color");
+    margin-top: 20px;
+}
+
+.pricelist__item{
+    color: getColor("secondary-light-color");
+    line-height: 2.14;
+    letter-spacing: 0.02em;
+    display: flex;
+    
+    &:not(:last-child){
+        margin-bottom: 20px;
+    }   
+}
+
+.pricelist__name{
+    flex-grow: 1;
+    display: flex;
+
+    &::after{
+        content: '';
+        margin: 0 6px 0 6px;
+        flex-grow: 1;
+        border-bottom: 1px getColor("secondary-light-color") solid;
+    }
+}
+
+.pricelist__button{
+    align-self: center;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.33;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: 1px getColor("accent-color") solid;
+    border-radius: 25px;
+    width: 160px;
+    height: 40px;
+    margin-top: 50px;
+    cursor: pointer;
+    color: getColor("light-color");
+    transition: color $main-animation, 
+                background-color $main-animation;
+
+    &:hover,
+    &:focus{
+        background-color: getColor("accent-color");
+        color: getColor("light-color");
+    }
+}

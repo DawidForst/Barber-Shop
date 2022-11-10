@@ -1,0 +1,62 @@
+@use './../utils' as *;
+
+.banner {
+    display: flex;
+}
+
+.banner__sidebar{
+    width: 120px;
+    height: 680px;
+    display: none;
+    flex-grow: 0;
+    flex-shrink: 0;
+    position: relative;
+}
+
+@media screen and (min-width: 768px){
+    .banner__sidebar{
+        display: flex;
+        margin-left: 39px;
+    }
+}
+
+.banner__sidebar-wrapper{
+    position: absolute;
+    bottom: 40px;
+    left: 37px;
+    transform-origin: 0 0 ;
+    transform: rotate(-90deg);
+}
+
+.banner__socials{
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 15px;
+    letter-spacing: 0.2em;
+    display: flex;
+    cursor: pointer;
+    gap: 40px;
+    padding-left: 100px;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0px;
+        width: 60px;
+        height: 1px;
+        background-color: getColor("main-color");
+    }
+}
+
+.banner__socials-link{
+    color: getColor("main-color");
+    transition: color $main-animation;
+
+    &:hover,
+    &:focus{
+        color: getColor("accent-color");
+    }
+}   
+    

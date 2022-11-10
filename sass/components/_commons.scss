@@ -1,0 +1,82 @@
+@use './../utils' as *;
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    color: getColor("main-color");
+    background-color: getColor("background-main-color");
+    font-family: "Open Sans", "Raleway", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+}
+
+ul{
+    list-style: none;
+}
+
+img{
+    display: block;
+}
+
+a{
+    text-decoration: none;
+}
+
+.section{
+    padding: $small-padding;
+}
+
+@media screen and (min-width: 768px) {
+    .section{
+        padding: $medium-padding;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .section {
+        padding: $big-padding;
+    }
+}
+
+.container{
+    max-width: 1200px;
+    display: flex;
+    margin: auto;
+}
+
+.is-hidden{
+    display: none;  
+}
+
+.is-invisible {
+    display: none;
+}
+
+.is-faded{
+    animation: fadeIn 500ms ease-in;
+}
+
+@keyframes fadeIn{
+    0%{opacity: 0%;}
+    100%{opacity: 100%;}
+}
+
+.no-scroll{
+    overflow: hidden;
+}
+
+.double-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 1200px) {
+    .double-wrapper {
+        flex-direction: row;
+    }
+}
+
